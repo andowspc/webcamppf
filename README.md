@@ -25,18 +25,27 @@
 * 顧客側
 
 [主要機能]
+
 Customer : ログインログイン会員ページ
+
 Item : 保有商品一覧ページ、各保有商品ページ、保有商品の追加/削除ページ
+
 Item_Article : 管理者側発信で各商品ページに各商品の情報記事アップデート
+
 Mailer : Action Mailer機能　お問合せページ(顧客➤管理者)　
 
 [補完的機能]
+
 Twitter画面埋め込み、Googlemap埋め込み、Slickによる写真スライド挿入、raty.jsによる顧客が各商品を評価する機能
 
 *管理者側
+[主要機能
 Admin_Customer : 会員一覧、各会員ページ、会員編集・削除ページ
+
 Admin_Item : 商品一覧ページ、各商品ページ、商品新規登録ページ、商品編集・削除ページ
+
 Admin_Article : 各商品ページに記事投稿
+
 Admin_Mailer : Action Mailer機能 記事更新・お問合せ返信（管理者➤顧客)
 
 
