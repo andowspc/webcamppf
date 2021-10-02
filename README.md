@@ -23,39 +23,56 @@
 
 ### 実装機能
 
-*顧客側/管理者側にログイン機能を実装
+* ログイン *
 
-* 顧客側
+顧客側/管理者側にログイン機能を実装。
+
+
+* 顧客側 *
 
 [主要機能]
 
-Customer : ログイン会員ページ
+Customer : ログイン会員ページ、会員編集・削除ページ
 
 Item : 保有商品一覧ページ、各保有商品ページ、保有商品の追加/削除ページ
 
-Item_Article : 管理者側発信で各商品ページに各商品の情報記事アップデート
+_Item_Article : 管理者側発信で「各商品ページ」にて各商品の情報記事アップデート
 
-Mailer : Action Mailer機能　お問合せページ(顧客➤管理者)　
+*「この製品にこのようなスペアパーツが発売となりました」等なの内容発信
+
+Mailer(Action Mailer機能) : お問合せページ(顧客➤管理者)　
 
 [補完的機能]
 
-Twitter画面埋め込み、Googlemap埋め込み、Slickによる写真スライド挿入、raty.jsによる顧客が各商品を評価する機能
+Twitter画面埋め込み
 
-*管理者側
+Googlemap埋め込み
+
+Slickによる写真スライド挿入
+
+raty.jsによる顧客が各商品を評価する機能
+
+
+* 管理者側 *
+
 [主要機能]
+
 Admin_Customer : 会員一覧、各会員ページ、会員編集・削除ページ
 
 Admin_Item : 商品一覧ページ、各商品ページ、商品新規登録ページ、商品編集・削除ページ
 
-Admin_Article : 各商品ページに記事投稿
+Admin_Item_Article : 各商品ページに記事投稿
 
-Admin_Mailer : Action Mailer機能 記事更新・お問合せ返信（管理者➤顧客)
+Admin_Mailer(Action Mailer機能) : 記事更新のメール（管理者➤顧客)
 
+*可能ならばお問合せ返信メールも行いたいが、実装機能について未確認。
 
 ## チャレンジ要素一覧
+
 https://docs.google.com/spreadsheets/d/1YghDBCqiQw-sl6HPL5fcO9OafZFx9OIItzWvdf_R-gY/edit?usp=sharing
 
 ## ワイヤーフレーム
+
 Not completed.
 
 https://drive.google.com/file/d/11tUoEEpfWIfjjlX2bgt4aEfJIRNxfwys/view?usp=sharing
