@@ -35,7 +35,9 @@
 
 Customer : ログイン会員ページ、会員編集・削除ページ
 
-Item : 保有商品一覧ページ、各保有商品ページ、保有商品の追加/削除ページ
+Item : 保有商品一覧ページ、各保有商品ページ、
+
+Myitem : 保有商品の追加/削除ページ
 
 Post : 管理者側発信で「各商品ページ」にて各商品の情報記事を表示
 
@@ -52,11 +54,11 @@ Googlemap埋め込み
 
 Slickによる写真スライド挿入
 
+商品へのいいね！機能
+
 以下は、進行状況に余裕があれば実装する
 
 ** raty.jsによる顧客が各商品を評価する機能
-
-** 商品へのいいね！機能
 
 ** 商品検索機能
 
@@ -67,15 +69,16 @@ Slickによる写真スライド挿入
 
 [主要機能]
 
-Admin_Customer : 会員一覧、各会員ページ、会員編集・削除ページ
+Admin/Customer : 会員一覧、各会員ページ、会員編集・削除ページ
 
-Admin_Item : 商品一覧ページ、各商品ページ、商品新規登録ページ、商品編集・削除ページ
+Admin/Item : 商品一覧ページ、各商品ページ、商品新規登録ページ、商品編集・削除ページ
 
-Admin_Post : 各商品ページから情報記事作成・削除　（コメント機能応用を想定）
+Admin/Post : 各商品ページから情報記事作成・削除　（コメント機能応用を想定）
 
-Admin_Mailer(Action Mailer機能) : 記事更新のメール（管理者➤顧客)
+Admin/Mailer(Action Mailer機能) : 新規登録時・記事更新のメール（管理者➤顧客)
 
-*可能ならばお問合せ返信メールも行いたいが、実装機能について未確認。
+
+
 
 ## チャレンジ要素一覧
 
@@ -83,12 +86,21 @@ https://docs.google.com/spreadsheets/d/1YghDBCqiQw-sl6HPL5fcO9OafZFx9OIItzWvdf_R
 
 ## ワイヤーフレーム
 
-Not completed.
-
 https://drive.google.com/file/d/11tUoEEpfWIfjjlX2bgt4aEfJIRNxfwys/view?usp=sharing
 
-## 設計書
-* To be uploaded.
+## ER図・テーブル定義書
+
+https://drive.google.com/file/d/1sbxYl_T9dTsqJqaTuJpD0KE6nM-t_m89/view?usp=sharing
+
+## アプリケーション詳細設計書
+
+https://docs.google.com/spreadsheets/d/1LX_8rGsSkkKWh87EI4jVJ53RafKlBLySEYAPKiqiHAM/edit?usp=sharing
+
+## WBS
+
+https://docs.google.com/spreadsheets/d/17qfyo6hYow74tmTpW7QWCXNJsYk1aAP2tAC7QqsB0FQ/edit?usp=sharing
+
+
 
 ## 開発環境
 - OS：Linux(CentOS)

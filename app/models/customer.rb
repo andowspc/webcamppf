@@ -10,8 +10,7 @@ class Customer < ApplicationRecord
   # :rememberable（ログイン情報を保存）
   # :validatable（emailのフォーマットなどのバリデーション）        
   
-  has_many :items, dependent: :destroy
-  has_many :posts, dependent: :destroy
+  has_many :myitems, dependent: :destroy
   has_many :favorites, dependent: :destroy
   
 end

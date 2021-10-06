@@ -20,18 +20,18 @@ Rails.application.routes.draw do
   
   # customer
   resources :customers, only: [:show, :edit, :update]
-  resources :items, only: [:index, :show, :edit, :update] do
+  resources :myitems, only: [:edit]
+  resources :items, only: [:index, :show] do
     
     resource :favorites, only: [:create, :destroy]
-    resources :posts, only: [:create, :destroy]
     
   end
   
   # admin
-  namespace :admin do
-    resources :customers, only: [:index, :show, :edit, :update, :destroy]
-    resources :items, only: [:index, :show, :edit, :update, :destroy] do
-     resources :posts, only: [:index, :show, :edit, :update, :destroy]
+  namespace :admins do
+    resources :customers, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+    resources :items, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+     resources :posts, only: [:new, :create, :edit, :update, :destroy]
     end
   end
 

@@ -1,0 +1,2 @@
+class MyitemsController < ApplicationController
+end

@@ -1,7 +1,8 @@
 class Item < ApplicationRecord
   
-  belongs_to :customers
+  has_many :myitems, dependent: :destroy 
   has_many :posts, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   attachment :image
   
 end
