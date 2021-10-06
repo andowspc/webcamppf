@@ -60,3 +60,13 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# -----------------------------------------------------------------------
+# 下記、gem記入・bundle installまで完了
+
+gem 'devise'
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
+
+# 下記、rails g kaminari:config, rails g kaminari:views defaultまで完了
+gem 'kaminari','~> 1.2.1'
