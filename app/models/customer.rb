@@ -11,6 +11,11 @@ class Customer < ApplicationRecord
   # :validatable（emailのフォーマットなどのバリデーション）        
   
   has_many :myitems, dependent: :destroy
+  has_many :items, through: :myitems
   has_many :favorites, dependent: :destroy
   
+  validates :lastname, presence: true
+  validates :firstname, presence: true
+  validates :email, presence: true
+  validates :encrypted_password, presence: true
 end

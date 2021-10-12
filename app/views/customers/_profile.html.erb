@@ -1,0 +1,13 @@
+<h2>お客様情報</h2>
+
+    <table class="table table-striped">
+
+
+      <tr><th>お客様氏名</th><td><%= profile.lastname %><%= profile.firstname %>様</td></tr>
+      <tr><th>DM送付</th><th><% if profile.dm? %>
+               <h5><span class="badge rounded-pill bg-primary">必要</span></h5>
+              <% else %>
+               <h5><span class="badge rounded-pill bg-danger">不要</span></h5>
+              <% end %></th></tr>
+      <tr><th><%= link_to"プロフィール編集・退会", edit_customer_path(current_customer.id), class: "btn btn-success" %></th><th>&nbsp;</th></tr>
+    </table>

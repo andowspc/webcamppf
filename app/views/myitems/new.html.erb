@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+
+    <h2>マイアイテムを追加</h2>
+      <%= form_for(@myitem) do |f| %>
+        <%= f.collection_select :item_id, @items, :id, :name %>
+        <%= f.submit "追加", data: { confirm: '本当に追加しますか？' }, class: "btn btn-secondary" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <!--<= form_with model:@myitem, url: myitems_path, local:true do |f| %>-->
+      <!--<select class="form-select", aria-label="Default select example" multiple>-->
+        <!--option selected======下記選択肢から選ぶ======/option-->
+        <!--< @items.each do |item| %>-->
+          <!--<option ><= item.name %></option>-->
+        <!--< end %>-->
+      <!--</select>-->

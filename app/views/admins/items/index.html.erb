@@ -2,12 +2,13 @@
   <div class="row">
     <div class="col-md-10 offset-md-1">
 
-    <h1>商品一覧&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <%= link_to"マイアイテム", new_myitem_path, class: "btn btn-info" %></h1>
+    <h1>商品一覧&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= link_to"新規商品", new_admins_item_path, class: "btn btn-primary" %></h1>
 
     <table class="table table-striped shadow-sm">
       <thead>
@@ -23,7 +24,7 @@
       <% @items.each do |item| %>
         <tr>
           <td>
-            <%= link_to item_path(item.id) do %>
+            <%= link_to admins_item_path(item.id) do %>
               <%= item.name %>
             <% end %>
             <br><br><br>
@@ -36,7 +37,7 @@
             <%=item.description %>
           </td>
           <td>
-            <%= link_to"詳細", item_path(item.id), class: "btn btn-success" %>
+            <%= link_to"詳細", admins_item_path(item.id), class: "btn btn-success" %>
           </td>
         </tr>
       <% end %>

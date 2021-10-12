@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+
+    <h1>管理者　顧客詳細</h1>
+
+    <table class="table table-striped shadow-sm">
+      <thead>
+        <tr>
+          <th>NO.</th>
+          <th>名前</th>
+          <th>フリガナ</th>
+          <th>住所</th>
+          <th>電話</th>
+          <th>メール</th>
+          <th>DM</th>
+        </tr>
+      </thaead>
+
+        <tbody>
+          <tr>
+            <td>
+              <%= @customer.id %>
+            </td>
+            <td>
+              <%= @customer.lastname %><%= @customer.firstname %>様
+            </td>
+            <td>
+              <%= @customer.lastruby %><%= @customer.firstruby %>様
+            </td>
+            <td>
+              <%= @customer.zip %><%= @customer.address %>
+            </td>
+            <td>
+              <%= @customer.tel %>
+            </td>
+            <td>
+              <%= @customer.email %>
+            </td>
+            <td>
+              <% if @customer.dm? %>
+               <h5><span class="badge rounded-pill bg-primary">必要</span></h5>
+              <% else %>
+               <h5><span class="badge rounded-pill bg-danger">不要</span></h5>
+              <% end %>
+            </td>
+          </tr>
+
+
+        </tbody>
+      </table>
+
+      <%= link_to "プロフィール編集", edit_admins_customer_path, class: "btn btn-success" %>
+      <%= link_to "削除", admins_customer_path(@customer), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger"  %>
+      <%= link_to "顧客一覧ページ", admins_customers_path,class: "btn btn-secondary" %>

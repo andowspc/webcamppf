@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+
+    <%= form_with model: @item, url: admins_items_path, local:true do |item| %>
+    <div class="text-center">
+  
+    <h2>新規商品編集</h2>
+
+    <h4>商品名</h4>
+      <%= item.name %>
+      <%= item.description %>
+    <br>
+    <%= customer.submit "更新", class: "btn btn-secondary" %>
+  
+  
+    </div>
+    <% end %>

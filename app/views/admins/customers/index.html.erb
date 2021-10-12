@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+
+    <h1>管理者　顧客一覧</h1>
+
+    <table class="table table-striped shadow-sm">
+      <thead>
+        <tr></tr>
+          <th>NO.</th>
+          <th>名前</th>
+          <th>フリガナ</th>
+          <th>メールアドレス</th>
+          <th>DM</th>
+          <th>&nbsp;&nbsp;</th>
+        </tr>
+      </thaead>
+
+      <tbody>
+      <% @customers.each do |customer| %>
+        <tr>
+          <td>
+            <%= customer.id %>
+          </td>
+          <td>
+            <%= customer.lastname %><%= customer.firstname %>様
+          </td>
+          <td>
+            <%= customer.lastruby %><%= customer.firstruby %>様
+          </td>
+          <td>
+            <%= customer.email %>
+          </td>
+          <td>
+              <% if customer.dm? %>
+               <h5><span class="badge rounded-pill bg-primary">必要</span></h5>
+              <% else %>
+               <h5><span class="badge rounded-pill bg-danger">不要</span></h5>
+              <% end %>
+          </td>
+          <td>
+            <%= link_to "詳細を見る", admins_customer_path(customer.id), class: "btn btn-success" %>
+          </td>
+        </tr>
+      <% end %>
+
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>

@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   get '/homes/about' => 'homes#about'
   
   # customer
-  resources :customers, only: [:show, :edit, :update]
-  resources :myitems, only: [:edit]
+  resources :customers, only: [:show, :edit, :update, :destroy]
+  resources :myitems, only: [:new, :create, :edit, :update, :destroy]
   resources :items, only: [:index, :show] do
     
     resource :favorites, only: [:create, :destroy]
@@ -29,9 +29,9 @@ Rails.application.routes.draw do
   
   # admin
   namespace :admins do
-    resources :customers, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+    resources :customers, only: [:index, :show, :edit, :update, :destroy]
     resources :items, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-     resources :posts, only: [:new, :create, :edit, :update, :destroy]
+      resources :posts, only: [:new, :create, :edit, :update, :destroy]
     end
   end
 

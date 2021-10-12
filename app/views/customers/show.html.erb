@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+
+      <%= render 'customers/profile', profile: @profile %>
+
+    <!--######################################################-->
+      <h2>Twitter</h2>
+      <div>
+      <a class="twitter-timeline" href="https://twitter.com/unemployed_31?ref_src=twsrc%5Etfw">
+      Tweets by unemployed_31</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+    <!--######################################################-->
+
+    <div class="col-md-7 offset-md-1">
+
+      <h2>マイ アイテム覧&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= link_to"マイアイテム追加", new_myitem_path, class: "btn btn-info" %></h2>
+
+      <table class="table table-striped shadow-sm">
+        <thead>
+          <tr>
+            <th>商品名</th>
+            <th>&nbsp;&nbsp;</th>
+            <th>説明</th>
+            <th>&nbsp;&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @myitems.each do |item| %>
+          <tr>
+          <td>
+            <%= link_to item_path(item.id) do %>
+              <%= item.name %>
+            <% end %>
+            <br><br><br>
+            登録日:<%= item.created_at.strftime('%Y/%m/%d') %>
+          </td>
+          <td>
+            <%= attachment_image_tag item, :image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg", size:'100x100' %>
+          </td>
+          <td>
+            <%=item.description %>
+          </td>
+          <td>
+             <%= link_to "削除", myitem_path(item.id), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger"  %>
+          </td>
+          </tr>
+          <% end %>
+        </tbody>
+
+      
+      </table>
+      
+      </div>
+  </div>
+</div>

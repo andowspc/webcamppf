@@ -1,0 +1,42 @@
+<header class="shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <%= image_tag 'ship.png', class:'short' %>
+      <a class="navbar-brand">mypage</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav">
+
+          <% if customer_signed_in? %>
+          <li>&nbsp;&nbsp;</li>
+          <li>&nbsp;&nbsp;</li>
+          <li><%= link_to "Mypage", customer_path(current_customer.id), class: "nav-item nav-link active" %></li>
+          <li><%= link_to "About", homes_about_path, class: "nav-item nav-link" %></li>
+          <li><%= link_to "Items", items_path, class: "nav-item nav-link" %></li>
+          <li><%= link_to "Logout", destroy_customer_session_path, method: :delete, class: "nav-item nav-link" %></li>
+
+          <% elsif admin_signed_in? %>
+          <li>&nbsp;&nbsp;</li>
+          <li>&nbsp;&nbsp;</li>
+          <li>&nbsp;&nbsp;</li>
+          <li><%= link_to "顧客一覧", admins_customers_path, class: "nav-item nav-link" %></li>
+          <li><%= link_to "商品一覧", admins_items_path, class: "nav-item nav-link" %></li>
+          <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-item nav-link" %></li>
+
+          <% else %>
+          <li>&nbsp;&nbsp;</li>
+          <li>&nbsp;&nbsp;</li>
+          <li>&nbsp;&nbsp;</li>
+          <li><%= link_to "About", homes_about_path, class: "nav-item nav-link" %></li>
+          <li><%= link_to "Sign_up", new_customer_registration_path, class: "nav-item nav-link" %></li>
+          <li><%= link_to "Login", new_customer_session_path, class: "nav-item nav-link" %></li>
+          <li><%= link_to "Who concers", new_admin_session_path, class: "nav-item nav-link" %></li>
+          <% end %>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

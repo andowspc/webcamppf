@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+
+    <%= form_with model: @item, url: admins_item_path, local:true do |item| %>
+    <div class="text-center">
+  
+    <h2>商品編集</h2>
+
+    <h4>商品名</h4>
+    <%= item.text_field :name, class: "form-control" %>
+    <br>
+    <h4>説明</h4>
+    <%= item.text_field :description, class: "form-control" %>
+    <br>
+    
+    <%= item.submit "更新", class: "btn btn-secondary" %>
+    <br>
+    <% end %>
+    <br>
+    <%= link_to "商品詳細へ戻る", admins_item_path(@item.id), class: "btn btn-secondary" %>
+    </div>
+    
+   

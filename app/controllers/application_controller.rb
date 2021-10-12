@@ -1,12 +1,39 @@
 class ApplicationController < ActionController::Base
   
-  
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_any!,except: [:top, :about]
 
   protected
+  
+    def authenticate_any!
+      if admin_signed_in?
+        true
+      else
+        authenticate_customer!
+      end
+    end
 
+
+
+  def after_sign_in_path_for(resource)
+    case resource
+    when Customer
+      customer_path(current_customer.id)
+    when Admin
+      admins_customers_path
+    end
+
+  end
+
+  def after_sign_out_path_for(resouce)
+    root_path
+  end
+  
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  
+  
+  
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name ])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :lastname, :firstname, :lastruby, :firstruby, :zip, :address, :tel])
   end
   
   

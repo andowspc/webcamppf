@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-6 offset-md-3">
 
-    <%= form_with model: @customer, url: customer_path, local:true do |customer| %>
+    <%= form_with model: @customer, url: admins_customer_path, local:true do |customer| %>
     <div class="text-center">
 
     <h2>プロフィール編集</h2>
@@ -23,25 +23,14 @@
       <%= customer.label :dm, "必要", value: true %>
       <%= customer.radio_button :dm, false %>
       <%= customer.label :dm, "不要", value: false %>
+
     <br>
     <%= customer.submit "更新", class: "btn btn-secondary" %>
     </div>
     <% end %>
-
-    <br><br><br>
-    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    =====退会をご希望のお客様=====</h4>
-    <h6>【注意】一度退会されますと、すべての情報が破棄されますので、ご注意ください。</h6>
-    <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <%= link_to "退会", customer_path(@customer), method: :delete, data: { confirm: '本当に退会しますか？' }, class: "btn btn-danger" %></h6>
-    
-    
-    
-    
-  
-
-
+    <br>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= link_to "商品詳細へ戻る", admins_customer_path(@customer.id), class: "btn btn-secondary" %></div>

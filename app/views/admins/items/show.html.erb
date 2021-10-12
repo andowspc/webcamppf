@@ -29,12 +29,12 @@
           </tr>
         </tbody>
       </table>
-      
-      
-      <h3>商品に関する投稿</h3>
+
+
+      <h3>商品に関する投稿</h3><%= link_to"新規投稿", new_admins_item_post_path(@item.id), class: "btn btn-primary" %>
       <table class="table table-striped shadow-sm">
         <thead>
-           <tr><td>タイトル</td><td>記事</td></tr>
+           <tr><td>タイトル</td><td>記事</td><td>&nbsp;</td><td>&nbsp;</td></tr>
         </thead>
         <tbody>
           <% @post.each do |article| %>
@@ -45,12 +45,23 @@
             <td>
               <%= article.post %>
             </td>
+            <td>
+              <%= link_to"投稿編集", edit_admins_item_post_path(article.id), class: "btn btn-success" %>
+            </td>
+            <td>
+              <%= link_to "投稿削除", admins_item_post_path(article.id), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger"  %>
+            </td>
           </tr>
           <% end %>
         </tbody>
       </table>
 
-      <%= link_to "一覧へ戻る", items_path, class: "btn btn-secondary" %></div>
+
+
+
+      <%= link_to "商品編集", edit_admins_item_path, class: "btn btn-success" %>
+      <%= link_to "商品削除", admins_item_path(@item), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger"  %>
+      <%= link_to "一覧へ戻る", admins_items_path, class: "btn btn-secondary" %></div>
 
     </div>
   </div>

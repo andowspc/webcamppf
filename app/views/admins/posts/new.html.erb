@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+
+    <h2>投稿</h2>
+
+    <%= form_with model:@post, url: admins_item_posts_path, local:true do |f| %>
+    
+      <h4>タイトル</h4>
+      <div><%= f.text_field :title, class: "form-control" %></div>
+
+      <h4>記事</h4>
+      <div><%= f.text_field :post, class: "form-control", placeholder: "記事内容をここに" %></div>
+      <br>
+      <div><%= f.submit '投稿登録', class: "btn btn-success" %></div>
+
+    <% end %>
+    
+    </div>
+  </div>
+</div>
