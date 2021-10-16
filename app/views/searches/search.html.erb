@@ -1,0 +1,4 @@
+<% if @model == 'item' %>
+	<h3>Items search for "<%= @content %>"</h3>
+  <%= render 'items/index', items: @records %>
+<% end %>

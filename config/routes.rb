@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/admin/homes/top' => 'homes#top' 
+  get '/admin/homes/top' => 'admins/homes#top'
+  get '/search', to: 'searches#search'
 
 end

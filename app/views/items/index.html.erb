@@ -2,48 +2,24 @@
   <div class="row">
     <div class="col-md-10 offset-md-1">
 
-    <h1>商品一覧&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <%= link_to"マイアイテム", new_myitem_path, class: "btn btn-info" %></h1>
-
-    <table class="table table-striped shadow-sm">
-      <thead>
-        <tr></tr>
-          <th>商品</th>
-          <th>写真</th>
-          <th>説明</th>
-          <th>&nbsp;</th>
-        </tr>
-      </thaead>
-
-      <tbody>
-      <% @items.each do |item| %>
-        <tr>
-          <td>
-            <%= link_to item_path(item.id) do %>
-              <%= item.name %>
-            <% end %>
-            <br><br><br>
-            登録日:<%= item.created_at.strftime('%Y/%m/%d') %>
-          </td>
-          <td>
-            <%= attachment_image_tag item, :image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg", size:'100x100' %>
-          </td>
-          <td>
-            <%=item.description %>
-          </td>
-          <td>
-            <%= link_to"詳細", item_path(item.id), class: "btn btn-success" %>
-          </td>
-        </tr>
+    <h1>商品一覧</h1>
+    
+    <p>
+      <%= form_with url: search_path, method: :get, local: true do |f| %><a>検索 </a>
+        <%= f.text_field :content %>
+        <%= f.select :model, options_for_select({ "Item" => "item" }) %>
+        <%= f.select :method, options_for_select({ "完全一致" => "perfect", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partial" }) %>
+        <%= f.submit '検索' %>
+        <%= link_to"マイアイテム編集", new_myitem_path, class: "btn btn-info" %>
       <% end %>
-      <%= paginate @items %>
-      </tbody>
-    </table>
+    </p>
+      
+      
+    <p id="notice"><%= notice %></p>
 
+    <%= render 'items/index', items: @items %>
+    
+    <%= paginate @items %>
 
     </div>
   </div>

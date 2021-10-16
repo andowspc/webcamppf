@@ -1,64 +1,72 @@
-<h2>新規会員ご登録</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  
-  <div class="field">
-    <%= f.label :lastname %><br />
-    <%= f.text_field :lastname, autofocus: true %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :firstname %><br />
-    <%= f.text_field :firstname, autofocus: true %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :lastruby %><br />
-    <%= f.text_field :lastruby, autofocus: true %>
-  </div>
-  
-   <div class="field">
-    <%= f.label :firstruby %><br />
-    <%= f.text_field :firstruby, autofocus: true %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :zip %><br />
-    <%= f.text_field :zip, autofocus: true %>
-  </div>
+    <h2>新規会員ご登録</h2>
 
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address, autofocus: true %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :tel %><br />
-    <%= f.text_field :tel, autofocus: true %>
-  </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field">
+      お名前（性）
+      <%= f.text_field :lastname, autofocus: true, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      お名前（名）
+      <%= f.text_field :firstname, autofocus: true, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      お名前 フリガナ（セイ）
+      <%= f.text_field :lastruby, autofocus: true, class: "form-control" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="field">
+      お名前 フリガナ（メイ）
+      <%= f.text_field :firstruby, autofocus: true, class: "form-control" %>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <div class="field">
+      郵便番号
+      <%= f.text_field :zip, autofocus: true, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      ご住所
+      <%= f.text_field :address, autofocus: true, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      電話番号
+      <%= f.text_field :tel, autofocus: true, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      メールアドレス
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div>
+
+    <div class="field">
+      パスワード
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+    </div>
+
+    <div class="field">
+      パスワード（確認用）
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "登録" %>
+    </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+
+    </div>
+  </div>
+</div>
