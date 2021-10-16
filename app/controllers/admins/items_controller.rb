@@ -7,6 +7,7 @@ class Admins::ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @post = Post.where(item_id:@item)
+    @favorite = Favorite.where(item_id:@item)
   end
 
   def new
@@ -31,6 +32,18 @@ class Admins::ItemsController < ApplicationController
     item = Item.find(params[:id])
     item.destroy
     redirect_to admins_items_path
+  end
+  
+  def self.search_for(content, method)
+    if method == 'perfect'
+      Item.where(name: content)
+    elsif method == 'forward'
+      Item.where('name LIKE ?', content+'%')
+    elsif method == 'backward'
+      Item.where('name LIKE ?', '%'+content)
+    else
+      Item.where('name LIKE ?', '%'+content+'%')
+    end
   end
 
   private

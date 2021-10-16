@@ -1,10 +1,13 @@
-<footer>
+<footer>  
   <div class='container mt-5'>
     <div class='row'>
       <div class='mx-auto'>
+        <a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <%= image_tag 'ship.png', class:'short' %><%= image_tag 'star.png', class:'short' %></a>
         <p>🄫2021 Ando Trading Co., Ltd.</p>
         <% if customer_signed_in? %>
-        <p>★会員ログイン状態★</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        ★会員ログイン状態★</p>
         <% end %>
         <% if admin_signed_in? %>
         <p>■管理者ログイン状態■</p>

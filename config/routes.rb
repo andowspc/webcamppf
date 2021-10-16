@@ -22,9 +22,7 @@ Rails.application.routes.draw do
   resources :customers, only: [:show, :edit, :update, :destroy]
   resources :myitems, only: [:new, :create, :edit, :update, :destroy]
   resources :items, only: [:index, :show] do
-    
     resource :favorites, only: [:create, :destroy]
-    
   end
   
   # admin
@@ -37,5 +35,7 @@ Rails.application.routes.draw do
 
   get '/admin/homes/top' => 'admins/homes#top'
   get '/search', to: 'searches#search'
+  get '/admins/search', to: 'admins/searches#search'
+  
 
 end
