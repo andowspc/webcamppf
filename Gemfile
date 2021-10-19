@@ -75,6 +75,3 @@ gem "refile-mini_magick"
 gem 'pry-rails'
 
 gem 'dotenv-rails'
-group :production do
-  gem 'mysql2'
-end

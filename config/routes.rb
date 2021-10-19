@@ -25,6 +25,13 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end
   
+  resources :contacts, only: [:new, :create]
+  post 'contacts/confirm' => 'contacts#confirm'
+  post 'contacts/back' => 'contacts#back'
+  get 'done' => 'contacts#done'
+  
+  
+  
   # admin
   namespace :admins do
     resources :customers, only: [:index, :show, :edit, :update, :destroy]
