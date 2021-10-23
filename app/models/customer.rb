@@ -19,4 +19,10 @@ class Customer < ApplicationRecord
   validates :firstname, presence: true
   validates :email, presence: true
   validates :encrypted_password, presence: true
+  
+  def full_name
+    self.lastname + self.firstname
+  end
+  
+  
 end

@@ -38,11 +38,17 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
       resources :posts, only: [:new, :create, :edit, :update, :destroy]
     end
+    resources :contacts, only: [:new, :create]
   end
 
   get '/admin/homes/top' => 'admins/homes#top'
   get '/search', to: 'searches#search'
   get '/admins/search', to: 'admins/searches#search'
+  
+  
+  post 'admins/contacts/confirm' => 'admins/contacts#confirm'
+  post 'admins/contacts/back' => 'admins/contacts#back'
+  get 'admins/done' => 'admins/contacts#done'
   
 
 end

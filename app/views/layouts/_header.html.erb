@@ -24,6 +24,7 @@
           <li>&nbsp;&nbsp;</li>
           <li><%= link_to "顧客一覧", admins_customers_path, class: "nav-item nav-link" %></li>
           <li><%= link_to "商品一覧", admins_items_path, class: "nav-item nav-link" %></li>
+          <li><%= link_to "問い合わせ返信", new_admins_contact_path, class: "nav-item nav-link" %></li>
           <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-item nav-link" %></li>
 
           <% else %>

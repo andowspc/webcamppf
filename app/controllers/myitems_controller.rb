@@ -17,8 +17,7 @@ class MyitemsController < ApplicationController
   end
 
   def destroy
-    @myitem.customer_id = current_customer.id
-    @myitem.item_id = params[:myitem][:item_id]
+    @myitem = Myitem.find_by(customer_id: current_customer.id, item_id: params[:id])
     @myitem.destroy
     redirect_to items_path(current_customer.id)
   end
