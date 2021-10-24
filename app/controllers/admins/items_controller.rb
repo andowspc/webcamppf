@@ -11,11 +11,13 @@ class Admins::ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new(items_params)
+    @item = Item.new()
   end
 
   def create
-
+    @item = Item.new(items_params)
+    @item.save
+    redirect_to admins_items_path
   end
 
   def edit
