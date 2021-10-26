@@ -7,7 +7,7 @@ class ContactsController < ApplicationController
   def confirm
     @contact = Contact.new(contact_params)
     if @contact.invalid?
-       render :new
+      render :new
     end
   end
   
@@ -18,9 +18,12 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    @contact.save
-    ContactMailer.send_mail(@contact).deliver_now
-    redirect_to done_path
+    if @contact.save
+      ContactMailer.send_mail(@contact).deliver_now
+      redirect_to done_path
+    else
+      render :new
+    end
   end
 
   def done

@@ -9,7 +9,7 @@ class Admins::ContactsController < ApplicationController
   def confirm
     @contact = Contact.new(contact_params)
     if @contact.invalid?
-       render :new
+      render :new
     end
   end
 
@@ -20,9 +20,12 @@ class Admins::ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-  　@contact.save
-    AdminContactMailer.send_mail(@contact).deliver_now
-    redirect_to admins_done_path
+    if @contact.save
+      AdminContactMailer.send_mail(@contact).deliver_now
+      redirect_to admins_done_path
+    else
+      render :new
+    end
   end
 
   def done
@@ -33,4 +36,5 @@ class Admins::ContactsController < ApplicationController
   def contact_params
     params.require(:contact).permit(:customer_id, :subject, :message )
   end
+  
 end
