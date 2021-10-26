@@ -20,12 +20,9 @@ class Admins::ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    if @contact.save
-      AdminContactMailer.send_mail(@contact).deliver_now
-      redirect_to admins_done_path
-    else
-      render :new
-    end
+  　@contact.save
+    AdminContactMailer.send_mail(@contact).deliver_now
+    redirect_to admins_done_path
   end
 
   def done

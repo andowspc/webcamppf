@@ -39,7 +39,7 @@
             </td>
             <td>
               <% if @customer.dm? %>
-               <h5><span class="badge rounded-pill bg-primary">必要</span></h5>
+               <h5><span class="badge rounded-pill bg-success">必要</span></h5>
               <% else %>
                <h5><span class="badge rounded-pill bg-danger">不要</span></h5>
               <% end %>
@@ -53,3 +53,21 @@
       <%= link_to "プロフィール編集", edit_admins_customer_path, class: "btn btn-success" %>
       <%= link_to "削除", admins_customer_path(@customer), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger"  %>
       <%= link_to "顧客一覧ページ", admins_customers_path,class: "btn btn-secondary" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+  </div>
+</div>
