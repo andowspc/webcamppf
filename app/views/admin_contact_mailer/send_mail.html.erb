@@ -1,4 +1,15 @@
-<%= @customer.lastname %> 様 から問い合わせがありました。<br>
+「mypage」管理担当各位<br>
+<br>
+お疲れ様です。<br>
+<br>
+<%= @customer.lastname %> 様 より、お問い合わせがありました。<br>
+<br>
+---------------------------------------------------<br>
+<br>
 【用件】：<%= @contact.subject %><br>
 【お問い合わせ内容】<br>
 <span style="white-space: pre-wrap;"><%= @contact.message %></span>
+<br>
+---------------------------------------------------<br>
+<br>
+「mypage」自動送信
