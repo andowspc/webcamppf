@@ -6,8 +6,10 @@ class Admins::ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @post = Post.where(item_id:@item)
-    @favorite = Favorite.where(item_id:@item)
+    @posts = @item.posts
+    # @posts = Post.where(item_id:@item.id)
+    @favorites = @item.favorites
+    # @favorite = Favorite.where(item_id:@item)
   end
 
   def new
@@ -35,7 +37,7 @@ class Admins::ItemsController < ApplicationController
     item.destroy
     redirect_to admins_items_path
   end
-  
+
   def self.search_for(content, method)
     if method == 'perfect'
       Item.where(name: content)

@@ -28,7 +28,7 @@
               <%= @item.description %>
             </td>
             <td>
-              <%= @favorite.count %>
+              <%= @favorites.count %>
             </td>
           </tr>
         </tbody>
@@ -41,19 +41,19 @@
            <tr><td>タイトル</td><td>記事</td><td>&nbsp;</td><td>&nbsp;</td></tr>
         </thead>
         <tbody>
-          <% @post.each do |article| %>
+          <% @posts.each do |post| %>
           <tr>
             <td>
-            　<%= article.title %>
+            　<%= post.title %>
             </td>
             <td>
-              <%= article.post %>
+              <%= post.post %>
             </td>
             <td>
-              <%= link_to"投稿編集", edit_admins_item_post_path(article.id), class: "btn btn-success" %>
+              <%= link_to"投稿編集", edit_admins_item_post_path(@item,post.id), class: "btn btn-success" %>
             </td>
             <td>
-              <%= link_to "投稿削除", admins_item_post_path(article.id), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger"  %>
+              <%= link_to "投稿削除", admins_item_post_path(@item,post.id), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger"  %>
             </td>
           </tr>
           <% end %>

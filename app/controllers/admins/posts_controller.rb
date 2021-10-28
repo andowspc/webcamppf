@@ -19,7 +19,7 @@ class Admins::PostsController < ApplicationController
 
   def edit
     @item = Item.find(params[:item_id])
-    @post = Post.new(item_id: @item.id)
+    @post = Post.find(params[:id])
   end
 
   def update
@@ -34,10 +34,8 @@ class Admins::PostsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:item_id])
-		@post.item_id = @item.id
-    @item.destroy
-    redirect_to admins_items_path
+    Post.find(params[:id]).destroy
+    redirect_to admins_item_path(params[:item_id])
   end
 
   private
