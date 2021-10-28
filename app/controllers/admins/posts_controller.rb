@@ -24,9 +24,9 @@ class Admins::PostsController < ApplicationController
 
   def update
     @item = Item.find(params[:item_id])
-		@post = Post.new(post_params)
+		@post = Post.find(params[:id])
 		@post.item_id = @item.id
-	  if @post.save!
+	  if @post.update(post_params)
 	    redirect_to admins_item_path(@item.id)
 	  else
 	    redirect_to new_admins_item_post_path
