@@ -4,7 +4,7 @@
 
     <h2>投稿編集</h2>
 
-    <%= form_with model:@post, url: admins_item_post_path(@item), local:true do |f| %>
+    <%= form_with model:@post, url: admins_item_post_path(@item), method: :patch, local:true do |f| %>
 
       <h4>タイトル</h4>
       <div><%= f.text_field :title, class: "form-control" %></div>
